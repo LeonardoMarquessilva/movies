@@ -40,10 +40,11 @@
                 android:layout_marginStart="@dimen/medium"
                 android:layout_marginLeft="@dimen/medium"
                 android:text="@string/type_popular"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_movies_list"
+                android:id="@+id/rv_popular_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/medium"
@@ -55,11 +56,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/medium"
                 android:layout_marginLeft="@dimen/medium"
-                android:text="@string/type_popular"
-                android:textColor="@color/colorAccent" />
+                android:text="@string/type_top_reated"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_movies_list2"
+                android:id="@+id/rv_top_reated_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/medium"
