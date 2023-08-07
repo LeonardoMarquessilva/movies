@@ -5,4 +5,6 @@
     <string name="movies">Filmes</string>
     <string name="type_popular">Popular</string>
     <string name="type_top_reated">Mais votados</string>
+    <string name="description">Descrição:</string>
+    <string name="text_description">Lançado em 2023 conta a historia de um desenvolvedor android...</string>
 </resources>

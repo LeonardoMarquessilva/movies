@@ -1,8 +1,9 @@
-package com.example.movieteste
+package com.example.movieteste.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.movieteste.R
 import com.example.movieteste.adapters.MovieAdapter
 import com.example.movieteste.model.Movie
 import com.example.movieteste.model.MovieResponse
@@ -20,7 +21,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        rv_popular_list.layoutManager = LinearLayoutManager(this)
+        rv_popular_list.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         rv_popular_list.setHasFixedSize(true)
         getMovieData { movies : List<Movie> ->
             rv_popular_list.adapter = MovieAdapter(movies)
@@ -61,5 +62,16 @@ class HomeActivity : AppCompatActivity() {
 
         })
     }
+/* // Development
+    fun startDetailActivity() {
+        textView.setOnClickListener {
+            val description: String = txt_descripition.text.toString()
+            val intent =Intent (this,DetailActivity::class.java)
+            intent.putExtra("value", description)
+            startActivity(intent)
 
+        }
+
+    }
+*/
 }

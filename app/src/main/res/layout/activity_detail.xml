@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -29,7 +28,7 @@
                 android:layout_marginStart="@dimen/medium"
                 android:layout_marginLeft="@dimen/medium"
                 android:layout_marginTop="@dimen/medium"
-                android:text="@string/movies"
+                android:text="@string/description"
                 android:textColor="@color/colorAccent"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -40,33 +39,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/medium"
                 android:layout_marginLeft="@dimen/medium"
-                android:text="@string/type_popular"
+                android:text="@string/text_description"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_popular_list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/medium"
-                android:orientation="horizontal"/>
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/medium"
-                android:layout_marginLeft="@dimen/medium"
-                android:text="@string/type_top_reated"
-                android:textColor="@color/colorAccent"
-                android:textStyle="bold"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_top_reated_list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/medium"
-                android:orientation="horizontal"/>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
