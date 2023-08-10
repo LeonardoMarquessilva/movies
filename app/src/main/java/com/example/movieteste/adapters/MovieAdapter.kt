@@ -13,19 +13,43 @@ class MovieAdapter(
     private val movies : List<Movie>
 ) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
 
-    class MovieViewHolder(view : View) : RecyclerView.ViewHolder(view){
+    private lateinit var mListener: onItemClickListener
+
+    interface onItemClickListener {
+
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(clickListener: onItemClickListener) {
+
+        mListener = clickListener
+    }
+
+
+
+    class MovieViewHolder(view : View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(view){
         private val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
         fun bindMovie(movie : Movie){
             itemView.movie_title.text = movie.title
             itemView.movie_release_date.text = movie.release
             Glide.with(itemView).load(IMAGE_BASE + movie.poster).into(itemView.movie_poster)
         }
+
+        init {
+            view.setOnClickListener {
+
+                clickListener.onItemClick(adapterPosition)
+            }
+        }
+
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        return MovieViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
-        )
+
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
+
+        return MovieViewHolder(itemView,mListener)
     }
 
     override fun getItemCount(): Int = movies.size
